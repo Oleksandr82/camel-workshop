@@ -29,7 +29,8 @@
             <item name="Introduction" href="index.html"/>
             <item name="Usage" href="usage.html"/>
             <item name="Build" href="build.html"/>
-            <item name="Wishes" href="wishes.html"/>
+            <item name="Workshop" href="workshop.html"/>
+            <!--<item name="Wishes" href="wishes.html"/>-->
             <item name="Source" href="https://github.com/Ordina-JTech/camel-workshop"/>
         </menu>
 
