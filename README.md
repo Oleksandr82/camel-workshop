@@ -1,2 +1,4 @@
-# camel-workshop
-Apache Camel Demo and Workshop
+# Camel Workshop
+
+Documentation can be found [here](TODO)
+
