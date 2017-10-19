@@ -13,7 +13,7 @@
 ## Introductie
 **Ivo Woltring**  
 
-Programmer and CodeSmith @ Ordina
+Software Architect and CodeSmith @ Ordina
 
 ![ivo](./pics/ivo-bio.png)
 
@@ -29,6 +29,12 @@ Software and Solutions Architect @ Ordina
 - Hands-on bouwen van Camel integratie module
 
 ![checklist](./pics/checklist.png)
+---
+
+<center>
+<img src="./pics/CamelNuHumpsJoke.png" style="width:50%;height:50%;"/>
+</center>
+
 ---
 ## Enterprise Integration Patterns (EIP)
 - Wat zijn dit en doen ze?
@@ -115,3 +121,5 @@ Community
 ## Workshop
 Github repo:  
 **https://github.com/Ordina-JTech/camel-workshop**
+
+<img src="./pics/hump-day-funny-camel-yosemite-sam.png" style="width:50%;height:50%;"/>
