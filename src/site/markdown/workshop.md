@@ -19,7 +19,7 @@ Hope you like the experience and love the ease with which you can now integrate 
 
 ## Hump on...
 
-### File routing
+### Exercise 1 - File routing
 
 One of the things often done in any language is to copy files from one location to another.
 
@@ -104,4 +104,6 @@ public class CopyFilesWithExtension {
 
 Lets imitate this behavior with a Camel route.
 
-* Please open class ``
+* Please open class `FileCopyRoute`
+* Follow the instructions in the code
+* Compare the above with what you created...

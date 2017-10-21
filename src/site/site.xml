@@ -18,8 +18,8 @@
 
     <bannerLeft>
         <name>JTech - Camel Workshop</name>
-        <src>./Jtech_logo_final.jpg</src>
-        <href>https://github.com/Ordina-JTech/camel-workshop</href>
+        <src>https://avatars2.githubusercontent.com/u/24607188?s=200&v=4</src>
+        <href>https://ordina-jtech.github.io/camel-workshop/index.html</href>
     </bannerLeft>
 
     <publishDate position="right"/>
@@ -37,6 +37,7 @@
         <links>
             <item name="Ordina-JTech blog" href="https://ordina-jtech.github.io/"/>
             <item name="Ordina.nl" href="https://www.ordina.nl"/>
+            <item name="IvoNet.nl" href="https://www.ivonet.nl"/>
         </links>
 
         <menu ref="reports" inherit="top"/>

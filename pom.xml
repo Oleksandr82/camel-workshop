@@ -20,7 +20,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>nl.ivonet</groupId>
-    <artifactId>camel-demo</artifactId>
+    <artifactId>camel-workshop</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -225,7 +225,7 @@
                     <message>Creating site for ${project.version}</message>
                     <server>github</server>
                     <merge>false</merge>
-                    <repositoryOwner>ivonet</repositoryOwner>
+                    <repositoryOwner>Ordina-JTech</repositoryOwner>
                     <repositoryName>${project.artifactId}</repositoryName>
                 </configuration>
                 <executions>
