@@ -102,6 +102,6 @@ public class CopyFilesWithExtension {
 }
 ```
 
-Lets imitate this behavior with camel.
+Lets imitate this behavior with a Camel route.
 
 * Please open class ``

@@ -17,8 +17,8 @@
 <project name="Camel Demo">
 
     <bannerLeft>
-        <name>IvoNet</name>
-        <src>Jtech_logo_final.jpg</src>
+        <name>JTech - Camel Workshop</name>
+        <src>./Jtech_logo_final.jpg</src>
         <href>https://github.com/Ordina-JTech/camel-workshop</href>
     </bannerLeft>
 

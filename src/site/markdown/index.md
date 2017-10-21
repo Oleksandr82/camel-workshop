@@ -1,4 +1,4 @@
-# Camel Demo
+# Camel workshop
 
 This project holds all kinds of Camel demo routes
 
