@@ -26,7 +26,7 @@
 
     <name>camel-demo</name>
     <description>This project holds all kinds of Camel demo routes</description>
-    <url>https://ivonet.github.io/camel-demo/</url>
+    <url>https://github.com/Ordina-JTech/camel-workshop</url>
 
     <developers>
         <developer>
@@ -35,7 +35,15 @@
             <url>http://ivonet.nl</url>
             <roles>
                 <role>developer</role>
-                <role>architect</role>
+                <role>coach</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>edwin</id>
+            <name>Edwin Derks</name>
+            <url></url>
+            <roles>
+                <role>coach</role>
             </roles>
         </developer>
     </developers>
@@ -56,16 +64,16 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/IvoNet/camel-demo.git</connection>
-        <developerConnection>scm:git:https://github.com/IvoNet/camel-demo.git</developerConnection>
-        <url>https://github.com/IvoNet/camel-demo</url>
+        <connection>scm:git:https://github.com/Ordina-JTech/camel-workshop.git</connection>
+        <developerConnection>scm:git:https://github.com/Ordina-JTech/camel-workshop.git</developerConnection>
+        <url>https://github.com/Ordina-JTech/camel-workshop</url>
     </scm>
 
 
     <distributionManagement>
         <site>
             <id>github</id>
-            <url>git@github.com:IvoNet/camel-demo.git</url>
+            <url>git@github.com:Ordina-JTech/camel-workshop.git</url>
         </site>
     </distributionManagement>
 

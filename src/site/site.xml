@@ -19,7 +19,7 @@
     <bannerLeft>
         <name>IvoNet</name>
         <src>Jtech_logo_final.jpg</src>
-        <href></href>
+        <href>https://github.com/Ordina-JTech/camel-workshop</href>
     </bannerLeft>
 
     <publishDate position="right"/>
@@ -27,14 +27,15 @@
     <body>
         <menu name="Overview">
             <item name="Introduction" href="index.html"/>
+            <item name="install" href="install.html"/>
             <item name="Usage" href="usage.html"/>
             <item name="Build" href="build.html"/>
             <item name="Workshop" href="workshop.html"/>
-            <!--<item name="Wishes" href="wishes.html"/>-->
             <item name="Source" href="https://github.com/Ordina-JTech/camel-workshop"/>
         </menu>
 
         <links>
+            <item name="Ordina-JTech blog" href="https://ordina-jtech.github.io/"/>
             <item name="Ordina.nl" href="https://www.ordina.nl"/>
         </links>
 
