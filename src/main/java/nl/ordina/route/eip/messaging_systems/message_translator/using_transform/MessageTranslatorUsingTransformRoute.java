@@ -23,6 +23,7 @@ import nl.ordina.route.eip.messaging_systems.message_translator.boundary.Order;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.jsonpath.JsonPath;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
@@ -47,7 +48,7 @@ import static java.lang.String.format;
  * @author Ivo Woltring
  */
 @Slf4j
-//@Component
+@Component
 public class MessageTranslatorUsingTransformRoute extends RouteBuilder {
 
     private final CamelDemoContext context;
@@ -62,7 +63,13 @@ public class MessageTranslatorUsingTransformRoute extends RouteBuilder {
         final String projectBaseLocation = this.context.projectBaseLocation();
         final String name = this.getClass().getSimpleName();
 
-        from(format("file://%s/target/MessageTranslatorUsingBean/?noop=true", projectBaseLocation))
+// Create a route that gets the file(s) from target/json and transforms them to xml
+// - use transform to transform to an Order class using the method "fromJson"
+// - use marshal and jaxb to to make it into an xml message
+// - log the xml body
+// - routing it to file in target/xml with the original name with `.xml` added to it
+
+        from(format("file://%s/target/json/?noop=true", projectBaseLocation))
               .routeId(name)
               .log("Found file [$simple{header.CamelFileName}] processing csv to json in this route.")
               .bean("jsonPathBean")
@@ -71,7 +78,7 @@ public class MessageTranslatorUsingTransformRoute extends RouteBuilder {
               .marshal()
               .jaxb()
               .log("Xml marshalled:\n${body}")
-              .to(format("file://%s/target/%s?fileName=${header.CamelFileName}.xml", projectBaseLocation, name));
+              .to(format("file://%s/target/xml?fileName=${header.CamelFileName}.xml", projectBaseLocation));
 
     }
 }

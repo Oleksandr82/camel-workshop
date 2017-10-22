@@ -30,6 +30,12 @@ import java.time.LocalDateTime;
  * <p>
  * This is a very dirty csv implementation, and only for demo purposes!
  *
+ *          1         2         3         4
+ * 1234567890123456789012345678901234567890
+ * ----------------------------------------
+ * 10000000012017070213h33m345261BH10 A0001
+ * 10000000022017070215h55m011000AA69 A0003
+ *
  * @author Ivo Woltring
  */
 @Slf4j
