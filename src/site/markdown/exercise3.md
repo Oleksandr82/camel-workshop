@@ -19,4 +19,15 @@ This exercise will show how easy it is to get messaging working...
 ## Hint(s)
 
 * jms component
-* maven artifact
+* maven artifacts met o.a....
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-activemq</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.apache.camel</groupId>
+    <artifactId>camel-jms</artifactId>
+</dependency>
+```

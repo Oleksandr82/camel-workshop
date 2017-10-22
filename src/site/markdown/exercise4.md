@@ -32,5 +32,26 @@ some of the possible translations we do almost daily.
 
 ## Hint(s)
 
-* jms component
-* maven artifact
+* 
+* maven artifact o.a...
+
+```xml
+<dependency>
+    <groupId>org.apache.camel</groupId>
+    <artifactId>camel-csv</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.apache.camel</groupId>
+    <artifactId>camel-jaxb</artifactId>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.datatype</groupId>
+    <artifactId>jackson-datatype-jdk8</artifactId>
+    <version>2.8.9</version>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.datatype</groupId>
+    <artifactId>jackson-datatype-jsr310</artifactId>
+    <version>2.8.9</version>
+</dependency>
+```
