@@ -7,7 +7,6 @@
 * java 8 installed
 * maven 3+ installed
 * a sense of adventure :-)
-* a good OS like linux or macOs :-)
 
 ## Run
 
@@ -39,7 +38,7 @@ A scenario something like the one below will play out... it changes as I add new
 
 ```text
 2017-04-13 22:11:25.048  INFO 5473 --- [/startingPoint/] SimpleFileCopyRoute                      : Found file [HelloWorld.txt] and copying it to: /Users/ivonet/dev/camel-demo/test-data/SimpleJmsRoute/
-2017-04-13 22:11:25.192  INFO 5473 --- [SimpleJmsRoute]] nl.ivonet.route.jms.SimpleJmsRoute       : Hello, world!
+2017-04-13 22:11:25.192  INFO 5473 --- [SimpleJmsRoute]] nl.ordina.route.jms.SimpleJmsRoute       : Hello, world!
 2017-04-13 22:11:25.666  INFO 5473 --- [localhost:11021] FtpToFtpRoute                            : Found file [HelloWorld.txt] and cp-ing it to the ftp user: user
 2017-04-13 22:11:26.169  INFO 5473 --- [localhost:11021] FtpToFileRoute                           : Found file [HelloWorld.txt] and copying it to: /Users/ivonet/dev/camel-demo/target/
 ```
