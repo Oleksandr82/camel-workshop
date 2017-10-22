@@ -1,13 +1,8 @@
 # Exercise 2 - FTP routing
 
+This exercise expands on the file routing exercise
 
 
-Lets imitate this behavior with a Camel route.
-
-* Please checkout the exercise 1 branch: `git checkout ex1`
-* Please open class `FileCopyRoute`
-* Follow the instructions in the code
-* Compare the above with what you created...
 
 ## Bonus Question(s)
 
