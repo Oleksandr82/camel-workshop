@@ -65,7 +65,7 @@ public class ServiceActivatorRoutesWithBeanMethodResolving extends RouteBuilder 
                     projectBaseLocation))
               .routeId(name + "_0")
               .convertBodyTo(String.class)
-              .split(body().tokenize("\n"))
+              .split(body().tokenize())
               .to("jms:topic:names");
 
         from("jms:topic:names")

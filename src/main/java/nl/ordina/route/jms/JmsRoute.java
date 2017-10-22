@@ -36,7 +36,7 @@ import static java.lang.String.format;
  * In the first route a file test-data/JmsRoute folder will be routed to the
  * JmsRoute Queue in ActiveMQ as configured by the spring.activemq.broker-url property
  * in the application.yml file.
- *
+ * <p>
  * For this route to work you need the the following dependencies:
  * <ul>
  * <li>org.apache.activemq:activemq-all or in our case the org.springframework.boot:spring-boot-starter-activemq</li>
@@ -63,20 +63,36 @@ public class JmsRoute extends RouteBuilder {
         final String queue = format("jms:queue:%s", name);
 
 
-// Create a route that
+// Create a route that get all files from the test-data/JmsRoute folder and give it an id corresponding to the name of the class
+// if the file is called "shakespeare.txt" special possessing is needed
+//    - the body needs to be split into its separate books and put on the shakespeare.<yourname> queue
+//    - log from all found books the title (get from the body)
+// if xml files you can put them on the `xml.<yourname>` queue
+// if other files you can put them on the 'dump.<yourname>' queue
 
-        from(format("file://%s/test-data/%s/", this.projectBaseLocation, name))
-              .routeId(name + "_1")
-              .to(queue);
 
-        from(queue)
-              .routeId(name + "_2")
-              .process(exchange -> {
-                  String body = exchange.getIn()
-                                        .getBody(String.class);
-                  log.info(body);
-              })
-              .to(format("file://%s/test-data/ftp/admin/", this.projectBaseLocation))
-              .to("ftp://{{ftp.admin.name}}:{{ftp.admin.password}}@{{ftp.host}}:{{ftp.port}}?passiveMode={{ftp.passiveMode}}");
+        from(format("file://%s/test-data/JmsRoute/?noop=true", this.projectBaseLocation))
+                .routeId(name)
+                .log("Found file [$simple{header.CamelFileName}]")
+                .choice()
+                .when(header("CamelFileName").isEqualTo("shakespeare.txt"))
+                .log("Found file [$simple{header.CamelFileName}] => Special processing")
+                .split(body().regexTokenize("16[0-9]{2}\n"))
+                .process(exchange -> {
+                    final String[] lines = exchange.getIn().getBody(String.class).trim().split("\n");
+                    if (lines.length > 0) {
+                        log.info(lines[0]);
+                    }
+                })
+                .to("jms:queue:shakespeare.ivo2")
+                .endChoice()
+                .when(header("CamelFileName").endsWith(".xml"))
+                .log("Found file [$simple{header.CamelFileName}] => xml queue")
+                .to("jms:queue:xml.ivo")
+                .otherwise()
+                .log("Found file [$simple{header.CamelFileName}] => dump queue")
+                .to("jms:queue:dump.ivo")
+                .end();
+
     }
 }
