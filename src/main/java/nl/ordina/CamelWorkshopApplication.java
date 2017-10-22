@@ -14,24 +14,18 @@
  * limitations under the License.
  */
 
-package nl.ordina.route.file.boundary;
+package nl.ordina;
 
-import nl.ordina.context.CamelDemoContext;
-import org.apache.camel.RecipientList;
-
-import static java.lang.String.format;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Returns the location to the recipient_list demo "from" point.
- *
- * @author Ivo Woltring
+ * Spring-boot startup.
  */
-public class XmlRecipientList {
-
-    @RecipientList
-    public String[] recipientListProvider() {
-        final String projectBaseLocation = new CamelDemoContext().projectBaseLocation();
-        return new String[]{format("file://%s/test-data/eip/message_routing/recipient_list/", projectBaseLocation)};
+@SpringBootApplication
+@SuppressWarnings({"UtilityClassWithoutPrivateConstructor", "UtilityClass", "NonFinalUtilityClass"})
+public class CamelWorkshopApplication {
+    public static void main(final String[] args) {
+        SpringApplication.run(CamelWorkshopApplication.class, args);
     }
-
 }

@@ -25,7 +25,7 @@ import static java.lang.String.format;
 
 /**
  * Just to demonstrate the usage of the {@link JsonPath} annotation.
- * I'm used in {@link nl.ordina.route.eip.messaging_systems.message_translator.using_transform.MessageTranslatorUsingTransform}
+ * I'm used in {@link nl.ordina.route.eip.messaging_systems.message_translator.using_transform.MessageTranslatorUsingTransformRoute}
  * for the rest this method will only return the body unmodified.
  *
  * will produce something like the following in the console log:

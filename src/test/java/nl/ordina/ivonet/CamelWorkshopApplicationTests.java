@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-package nl.ordina;
+package nl.ordina.ivonet;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-/**
- * Spring-boot startup.
- */
-@SpringBootApplication
-@SuppressWarnings({"UtilityClassWithoutPrivateConstructor", "UtilityClass", "NonFinalUtilityClass"})
-public class CamelDemoApplication {
-    public static void main(final String[] args) {
-        SpringApplication.run(CamelDemoApplication.class, args);
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class CamelWorkshopApplicationTests {
+
+    @Test
+    public void contextLoads() {
     }
+
 }

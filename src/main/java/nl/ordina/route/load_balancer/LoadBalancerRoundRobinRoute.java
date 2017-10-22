@@ -18,7 +18,6 @@ package nl.ordina.route.load_balancer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.builder.RouteBuilder;
-import org.springframework.stereotype.Component;
 
 /**
  * Simple demo of a load balancer round robin route.
@@ -26,7 +25,7 @@ import org.springframework.stereotype.Component;
  * @author Ivo Woltring
  */
 @Slf4j
-@Component
+//@Component
 public class LoadBalancerRoundRobinRoute extends RouteBuilder {
 
     @Override

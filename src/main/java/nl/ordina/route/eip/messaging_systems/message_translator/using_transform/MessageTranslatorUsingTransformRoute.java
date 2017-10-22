@@ -23,7 +23,6 @@ import nl.ordina.route.eip.messaging_systems.message_translator.boundary.Order;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.jsonpath.JsonPath;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
@@ -33,7 +32,7 @@ import static java.lang.String.format;
  * A.k.a the Adapter pattern.
  *
  * This route demo's the MessageTranslator pattern by using the .transfom builder method.
- * In this case it will use destination of the {@link nl.ordina.route.eip.messaging_systems.message_translator.using_beans.MessageTranslatorUsingBean}
+ * In this case it will use destination of the {@link nl.ordina.route.eip.messaging_systems.message_translator.using_beans.MessageTranslatorUsingBeanRoute}
  * as the monitor start place (from) and will convert json to xml.
  * First it will transform the json back to it's java object {@link Order} using the provided "fromJson" method of that class
  * then it will marshal it to xml using jaxb.
@@ -48,13 +47,13 @@ import static java.lang.String.format;
  * @author Ivo Woltring
  */
 @Slf4j
-@Component
-public class MessageTranslatorUsingTransform extends RouteBuilder {
+//@Component
+public class MessageTranslatorUsingTransformRoute extends RouteBuilder {
 
     private final CamelDemoContext context;
 
     @Autowired
-    public MessageTranslatorUsingTransform(final CamelDemoContext context) {
+    public MessageTranslatorUsingTransformRoute(final CamelDemoContext context) {
         this.context = context;
     }
 

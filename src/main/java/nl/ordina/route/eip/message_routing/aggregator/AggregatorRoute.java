@@ -25,7 +25,6 @@ import org.apache.camel.component.leveldb.LevelDBAggregationRepository;
 import org.apache.camel.spi.AggregationRepository;
 import org.apache.camel.util.toolbox.AggregationStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 /**
  * An Aggregator EIP demo.
@@ -53,7 +52,7 @@ import org.springframework.stereotype.Component;
  * @author Ivo Woltring
  */
 @Slf4j
-@Component
+//@Component
 public class AggregatorRoute extends RouteBuilder {
 
     private final MyAggregationStrategy myAggregationStrategy;

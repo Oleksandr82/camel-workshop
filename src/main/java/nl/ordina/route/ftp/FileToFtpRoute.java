@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2017 Ivo Woltring <WebMaster@ivonet.nl>
  *
@@ -22,25 +23,21 @@ import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import static java.lang.String.format;
+
 /**
- * Ftp consuming example.
- * <p>
- * To see this route work just move the file from test-data/ftp/user/.camel to test-data/ftp/user.
- * just look at the log and see that the file has been moved back to the camel folder but also
- * appears in target/FtpRoute.
- *
- * For this route to work you need the org.apache.camel:camel-ftp dependency in your pom
+ * This exercise lets you get acquainted with ftp routing.
  *
  * @author Ivo Woltring
  */
 @Slf4j
 @Component
-public class FtpToFileRoute extends RouteBuilder {
+public class FileToFtpRoute extends RouteBuilder {
 
     private final CamelDemoContext context;
 
     @Autowired
-    public FtpToFileRoute(final CamelDemoContext context) {
+    public FileToFtpRoute(final CamelDemoContext context) {
         this.context = context;
     }
 
@@ -48,10 +45,15 @@ public class FtpToFileRoute extends RouteBuilder {
     public void configure() throws Exception {
         final String projectBaseLocation = this.context.projectBaseLocation();
         final String name = this.getClass().getSimpleName();
-        from("ftp://{{ftp.user.name}}:{{ftp.user.password}}@{{ftp.host}}:{{ftp.port}}?passiveMode=true&move=.camel")
-              .routeId(name)
-              .log(String.format("Found file [$simple{header.CamelFileName}] and copying it to: %s/target/",
-                                 projectBaseLocation))
-              .to(String.format("file://%s/target/%s/", projectBaseLocation, name));
+
+        // Copy all the files from the target/txt folder to the ftp site under the user account
+        // log what you are doing
+        // make sure you get the ftp information from the application.yml file of its profile equivalent
+
+        from(format("file://%s/target/txt/", projectBaseLocation))
+                .routeId(name)
+                .log("Found file [$simple{header.CamelFileName}]")
+                .to("ftp://{{ftp.host}}:{{ftp.port}}?username={{ftp.user.name}}&password={{ftp.user.password}}&passiveMode={{ftp.passiveMode}}");
+
     }
 }

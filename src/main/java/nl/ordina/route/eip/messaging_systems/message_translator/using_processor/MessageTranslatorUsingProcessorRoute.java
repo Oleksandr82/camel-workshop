@@ -21,7 +21,6 @@ import nl.ordina.context.CamelDemoContext;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import static java.lang.String.format;
 
@@ -37,14 +36,14 @@ import static java.lang.String.format;
  * @author Ivo Woltring
  */
 @Slf4j
-@Component
-public class MessageTranslatorUsingProcessor extends RouteBuilder {
+//@Component
+public class MessageTranslatorUsingProcessorRoute extends RouteBuilder {
 
     private final CamelDemoContext context;
     private final CustomFormatToCsvProcessor customFormatToCsvProcessor;
 
     @Autowired
-    public MessageTranslatorUsingProcessor(final CamelDemoContext context, final CustomFormatToCsvProcessor customFormatToCsvProcessor) {
+    public MessageTranslatorUsingProcessorRoute(final CamelDemoContext context, final CustomFormatToCsvProcessor customFormatToCsvProcessor) {
         this.context = context;
         this.customFormatToCsvProcessor = customFormatToCsvProcessor;
     }

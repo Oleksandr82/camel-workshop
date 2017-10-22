@@ -9,6 +9,7 @@ ftp:
   admin:
     name: admin
     password: secret
+  passiveMode: true
 
 flyway:
   url: "jdbc:h2:mem:camel_workshop;MODE=MySQL;INIT=RUNSCRIPT FROM 'classpath:flyway_init.sql'"

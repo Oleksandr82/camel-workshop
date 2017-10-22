@@ -20,7 +20,6 @@ import lombok.extern.slf4j.Slf4j;
 import nl.ordina.context.CamelDemoContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 /**
  * JMS ActiveMQ demo.
@@ -44,7 +43,7 @@ import org.springframework.stereotype.Component;
  * @author Ivo Woltring
  */
 @Slf4j
-@Component
+//@Component
 public class SimpleJmsRoute extends RouteBuilder {
 
     private final String projectBaseLocation;

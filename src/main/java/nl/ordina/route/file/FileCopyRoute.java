@@ -19,7 +19,6 @@ package nl.ordina.route.file;
 import lombok.extern.slf4j.Slf4j;
 import nl.ordina.context.CamelDemoContext;
 import nl.ordina.route.eip.message_routing.recipient_list.boundary.AnnotatedRecipientList;
-import nl.ordina.route.file.boundary.XmlRecipientList;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -60,17 +59,13 @@ public class FileCopyRoute extends RouteBuilder {
         final String name = this.getClass().getSimpleName();
 
         from(format("file://%s/test-data/startingPoint/?noop=true", projectBaseLocation))
-              .routeId(name)
-              .choice()
-              .when(header("CamelFileName").endsWith(".xml"))
-              .log("Found file [$simple{header.CamelFileName}] and will copy them to eip recipient-list.")
-              .bean(XmlRecipientList.class)
-              .recipientList(header("recipients"))
-              .end()
-              .otherwise()
-              .log(format("Found file [$simple{header.CamelFileName}] and copying it to: %s/test-data/SimpleJmsRoute/",
-                          projectBaseLocation))
-              .to(format("file://%s/test-data/SimpleJmsRoute/", projectBaseLocation))
-              .stop();
+                .routeId(name)
+                .choice()
+                .when(header("CamelFileName").endsWith(".xml"))
+                .log("Found file [$simple{header.CamelFileName}] and will copy to target/xml.")
+                .to(format("file://%s/target/xml/", projectBaseLocation))
+                .otherwise()
+                .log("Found file [$simple{header.CamelFileName}] and copying it to target/txt")
+                .to(format("file://%s/target/txt/", projectBaseLocation));
     }
 }

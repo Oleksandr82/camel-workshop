@@ -21,7 +21,6 @@ import nl.ordina.context.CamelDemoContext;
 import org.apache.camel.Handler;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 /**
  * A few Service Activator by using beans examples.
@@ -42,7 +41,7 @@ import org.springframework.stereotype.Component;
  * @author Ivo Woltring
  */
 @Slf4j
-@Component
+//@Component
 @SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class ServiceActivatorRoutesWithBeanMethodWithMultipleParams extends RouteBuilder {
 

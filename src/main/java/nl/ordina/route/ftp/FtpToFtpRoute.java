@@ -21,12 +21,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
 /**
- * FTP 2 FTP Demo.
- *
- * if you add a file to the test-data/ftp/admin folder it will be picked up by this route and uploaded to
- * the ftp 'user' where the {@link FtpToFileRoute} will pick it up...
- *
- * For this route to work you need the org.apache.camel:camel-ftp dependency in your pom
+ * FTP 2 FTP Route.
  *
  * @author Ivo Woltring
  */
@@ -36,10 +31,16 @@ public class FtpToFtpRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         final String name = this.getClass().getSimpleName();
-        from("ftp://{{ftp.admin.name}}:{{ftp.admin.password}}@{{ftp.host}}:{{ftp.port}}?passiveMode=true&move=.camel")
-              .routeId(name)
-              .log("Found file [$simple{header.CamelFileName}] and cp-ing it to the ftp user: user")
-              .to("ftp://{{ftp.user.name}}:{{ftp.user.password}}@{{ftp.host}}:{{ftp.port}}?passiveMode=true");
+
+
+// Create a route that moves all files arriving into the `user` ftp account to the `admin` account
+// make sure to log all you do
+// the move should leave a copy in a backup folder on the `user` account
+
+        from("ftp://{{ftp.user.name}}:{{ftp.user.password}}@{{ftp.host}}:{{ftp.port}}?move=.camel&passiveMode={{ftp.passiveMode}}")
+                .routeId(name)
+                .log("Found file [$simple{header.CamelFileName}] and cp-ing it to the ftp user: admin")
+                .to("ftp://{{ftp.admin.name}}:{{ftp.admin.password}}@{{ftp.host}}:{{ftp.port}}?passiveMode={{ftp.passiveMode}}");
 
     }
 }

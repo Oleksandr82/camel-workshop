@@ -20,7 +20,6 @@ import lombok.extern.slf4j.Slf4j;
 import nl.ordina.context.CamelDemoContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import static java.lang.String.format;
 
@@ -28,7 +27,7 @@ import static java.lang.String.format;
  * A.k.a the Adapter pattern.
  *
  * This route demo's the MessageTranslator pattern by using a Bean for the mapper.
- * This route monitors the folder where the {@link nl.ordina.route.eip.messaging_systems.message_translator.using_processor.MessageTranslatorUsingProcessor}
+ * This route monitors the folder where the {@link nl.ordina.route.eip.messaging_systems.message_translator.using_processor.MessageTranslatorUsingProcessorRoute}
  * print its Csv entries to console.
  * Then it will marshall the csv to a list of lists of strings by using the csv marshaller provided by Camel.
  * The bean demoed here will convert the unmarshal-ed entries to Json using the {@link CsvToJson} bean.
@@ -37,13 +36,13 @@ import static java.lang.String.format;
  * @author Ivo Woltring
  */
 @Slf4j
-@Component
-public class MessageTranslatorUsingBean extends RouteBuilder {
+//@Component
+public class MessageTranslatorUsingBeanRoute extends RouteBuilder {
 
     private final CamelDemoContext context;
 
     @Autowired
-    public MessageTranslatorUsingBean(final CamelDemoContext context) {
+    public MessageTranslatorUsingBeanRoute(final CamelDemoContext context) {
         this.context = context;
     }
 

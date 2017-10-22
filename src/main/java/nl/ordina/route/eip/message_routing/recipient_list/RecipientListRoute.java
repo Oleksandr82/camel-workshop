@@ -22,7 +22,6 @@ import nl.ordina.route.eip.message_routing.recipient_list.boundary.AnnotatedReci
 import nl.ordina.route.file.FileCopyRoute;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 /**
  * A RecipientList EIP demo.
@@ -41,7 +40,7 @@ import org.springframework.stereotype.Component;
  * @author Ivo Woltring
  */
 @Slf4j
-@Component
+//@Component
 public class RecipientListRoute extends RouteBuilder {
 
     private final CamelDemoContext context;

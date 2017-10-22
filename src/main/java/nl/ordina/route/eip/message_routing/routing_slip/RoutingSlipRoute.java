@@ -18,7 +18,6 @@ package nl.ordina.route.eip.message_routing.routing_slip;
 
 import nl.ordina.route.eip.message_routing.routing_slip.boundary.Decider;
 import org.apache.camel.builder.RouteBuilder;
-import org.springframework.stereotype.Component;
 
 /**
  * Most of the routing patterns presented in this section route incoming
@@ -37,7 +36,7 @@ import org.springframework.stereotype.Component;
  *
  * @author Ivo Woltring
  */
-@Component
+//@Component
 public class RoutingSlipRoute extends RouteBuilder {
 
     @Override
