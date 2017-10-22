@@ -20,6 +20,9 @@ import lombok.extern.slf4j.Slf4j;
 import nl.ordina.context.CamelDemoContext;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import static java.lang.String.format;
 
 /**
  * JMS ActiveMQ demo.
@@ -30,8 +33,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  * The endpoint provided in the application.yml (or application.properties) file will tell the
  * autoconfigure with which url to create the connectionFactory.
  * <p>
- * In the first route a file test-data/SimpleJmsRoute folder will be routed to the
- * SimpleJmsRoute Queue in ActiveMQ as configured by the spring.activemq.broker-url property
+ * In the first route a file test-data/JmsRoute folder will be routed to the
+ * JmsRoute Queue in ActiveMQ as configured by the spring.activemq.broker-url property
  * in the application.yml file.
  *
  * For this route to work you need the the following dependencies:
@@ -43,13 +46,13 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author Ivo Woltring
  */
 @Slf4j
-//@Component
-public class SimpleJmsRoute extends RouteBuilder {
+@Component
+public class JmsRoute extends RouteBuilder {
 
     private final String projectBaseLocation;
 
     @Autowired
-    public SimpleJmsRoute(final CamelDemoContext context) {
+    public JmsRoute(final CamelDemoContext context) {
         this.projectBaseLocation = context.projectBaseLocation();
     }
 
@@ -57,10 +60,12 @@ public class SimpleJmsRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         final String name = this.getClass().getSimpleName();
-        final String queue = String.format("jms:queue:%s", name);
+        final String queue = format("jms:queue:%s", name);
 
 
-        from(String.format("file://%s/test-data/%s/", this.projectBaseLocation, name))
+// Create a route that
+
+        from(format("file://%s/test-data/%s/", this.projectBaseLocation, name))
               .routeId(name + "_1")
               .to(queue);
 
@@ -71,7 +76,7 @@ public class SimpleJmsRoute extends RouteBuilder {
                                         .getBody(String.class);
                   log.info(body);
               })
-              .to(String.format("file://%s/test-data/ftp/admin/", this.projectBaseLocation))
-              .to("ftp://{{ftp.admin.name}}:{{ftp.admin.password}}@{{ftp.host}}:{{ftp.port}}?passiveMode=true");
+              .to(format("file://%s/test-data/ftp/admin/", this.projectBaseLocation))
+              .to("ftp://{{ftp.admin.name}}:{{ftp.admin.password}}@{{ftp.host}}:{{ftp.port}}?passiveMode={{ftp.passiveMode}}");
     }
 }

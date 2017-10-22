@@ -17,6 +17,8 @@ This means that you yourself do not have to write code to:
 * ignore already processed files
 All this is done by just declaring the route
 
+You might try to create (or copy) a file to the starting (from) end-point by "hand" and see what happens.
+
 ## Hint(s)
 
 * ftp component
