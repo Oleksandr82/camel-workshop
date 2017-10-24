@@ -61,13 +61,17 @@ public class ServiceActivatorRoutesWithBeanMethodResolving extends RouteBuilder 
                                 .getSimpleName();
 
 
+
         from(format("file://%s/test-data/eip/messaging_endpoints/service_activator/with_beans/?noop=true",
                     projectBaseLocation))
               .routeId(name + "_0")
+
+// Finish the route by splitting the body of the found files into lines and adding a message to the 'names.<yourname>' topic
               .convertBodyTo(String.class)
               .split(body().tokenize())
               .to("jms:topic:names");
 
+// Create a route that reads from the 'names.<yourname>' topic and uses
         from("jms:topic:names")
               .routeId(name + "_1")
               .bean("singleMethodBean")
