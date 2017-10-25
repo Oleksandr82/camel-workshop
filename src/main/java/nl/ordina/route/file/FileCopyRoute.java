@@ -25,6 +25,12 @@ import org.springframework.stereotype.Component;
 import static java.lang.String.format;
 
 /**
+ * Exercise 1:
+ *
+ * In this exercise you will familiarize yourself with a basic Camel functionality:
+ * <a href="http://camel.apache.org/file2.html">File handling</a>
+ * <a href="http://camel.apache.org/simple.html">Simple Expression Language</a>
+ *
  * @author Ivo Woltring
  */
 @Slf4j
@@ -43,6 +49,9 @@ public class FileCopyRoute extends RouteBuilder {
         final String projectBaseLocation = this.context.projectBaseLocation();
         final String name = this.getClass().getSimpleName();
 
+        from(format("file://%s/test-data/startingPoint/?noop=true", projectBaseLocation))
+                .routeId(name)
+
 // Now copy all xml files from the 'from' location to the <projectBaseLocation>/target/xml folder
 // The from location is already provided in this exercise and the route is also given an id.
 // Copy all text files to <projectBaseLocation>/target/txt folder
@@ -54,14 +63,6 @@ public class FileCopyRoute extends RouteBuilder {
 
 // (Bonus) Question(s):
 // - what would you need to change to make this copy into a move?
-        from(format("file://%s/test-data/startingPoint/?noop=true", projectBaseLocation))
-                .routeId(name)
-                .choice()
-                .when(header("CamelFileName").endsWith(".xml"))
-                .log("Found file [$simple{header.CamelFileName}] and will copy to target/xml.")
-                .to(format("file://%s/target/xml/", projectBaseLocation))
-                .otherwise()
-                .log("Found file [$simple{header.CamelFileName}] and copying it to target/txt")
-                .to(format("file://%s/target/txt/", projectBaseLocation));
+
     }
 }
