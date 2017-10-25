@@ -57,9 +57,6 @@
                           <a href="build.html" title="Build">Build</a>
             </li>
                   <li class="none">
-                          <a href="./" title="Source">Source</a>
-            </li>
-                  <li class="none">
                           <a href="workshop.html" title="Workshop">Workshop</a>
             </li>
                   <li class="none">
@@ -174,6 +171,8 @@ public class CopyFilesWithExtension {
 
 <ul>
   
+<li>The docker environment is not needed for this exercise</li>
+  
 <li>Please checkout the exercise 1 branch: <tt>git checkout ex1</tt></li>
   
 <li>Please open class <tt>FileCopyRoute</tt></li>
@@ -191,6 +190,33 @@ public class CopyFilesWithExtension {
   
 <li>can you move with backup on original location?</li>
 </ul></div>
+<div class="section">
+<h2><a name="Extra_information"></a>Extra information</h2>
+<p>In order to get the camel routes to work the following was added to the pom.xml</p>
+
+<div class="source">
+<div class="source">
+<pre>&lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.camel&lt;/groupId&gt;
+            &lt;artifactId&gt;camel-parent&lt;/artifactId&gt;
+            &lt;version&gt;${camel.version}&lt;/version&gt;
+            &lt;type&gt;pom&lt;/type&gt;
+            &lt;scope&gt;import&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+</pre></div></div>
+<p>and</p>
+
+<div class="source">
+<div class="source">
+<pre>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.camel&lt;/groupId&gt;
+    &lt;artifactId&gt;camel-spring-boot-starter&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</pre></div></div></div>
 <div class="section">
 <h2><a name="Hints"></a>Hint(s)</h2>
 

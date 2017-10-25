@@ -57,9 +57,6 @@
                           <a href="build.html" title="Build">Build</a>
             </li>
                   <li class="none">
-                          <a href="./" title="Source">Source</a>
-            </li>
-                  <li class="none">
                           <a href="workshop.html" title="Workshop">Workshop</a>
             </li>
                   <li class="none">
@@ -103,6 +100,8 @@
 <p>In this exercise we will try to implement the <a class="externalLink" href="http://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageTranslator.html">Message Translator EIP</a> Translating and transforming messages is one of the things we do a lot as programmers. From Java objects to XML to Json and back are just some of the possible translations we do almost daily.</p>
 
 <ul>
+  
+<li>For this exercise we need the docker environment to be running</li>
   
 <li>Check out branch ex4 (<tt>git checkout ex4</tt>)</li>
   
@@ -150,6 +149,10 @@
 <div class="source">
 <div class="source">
 <pre>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.camel&lt;/groupId&gt;
+    &lt;artifactId&gt;camel-jsonpath&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
     &lt;groupId&gt;org.apache.camel&lt;/groupId&gt;
     &lt;artifactId&gt;camel-csv&lt;/artifactId&gt;
 &lt;/dependency&gt;
