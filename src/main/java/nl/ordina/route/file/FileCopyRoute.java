@@ -18,7 +18,6 @@ package nl.ordina.route.file;
 
 import lombok.extern.slf4j.Slf4j;
 import nl.ordina.context.CamelDemoContext;
-import nl.ordina.route.eip.message_routing.recipient_list.boundary.AnnotatedRecipientList;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -26,20 +25,6 @@ import org.springframework.stereotype.Component;
 import static java.lang.String.format;
 
 /**
- * When running this example and you have configured the project.base.folder
- * correctly it will copy all files from the test-data/SimpleFileCopyRoute folder
- * to test-data/ftp/admin folder which is also the 'home' folder for the ftp admin user.
- * <p>
- * It is named to illustrate that and it adds some logs and a bit of Simple language
- * usage.
- * <p>
- * If you remove '?noop=true' the copy will become a move.
- * <p>
- * In this example a kind of filter is build in.
- * This specific route takes all files but send them to different end-points.
- * The xml files will be send to the eip/recipient-list. In the RecipientList demo I will do the same but illustrate more.
- * The {@link AnnotatedRecipientList} class is being reused here.
- *
  * @author Ivo Woltring
  */
 @Slf4j
