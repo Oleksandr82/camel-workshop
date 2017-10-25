@@ -43,6 +43,17 @@ public class FileCopyRoute extends RouteBuilder {
         final String projectBaseLocation = this.context.projectBaseLocation();
         final String name = this.getClass().getSimpleName();
 
+// Now copy all xml files from the 'from' location to the <projectBaseLocation>/target/xml folder
+// The from location is already provided in this exercise and the route is also given an id.
+// Copy all text files to <projectBaseLocation>/target/txt folder
+// also log what you are doing and try to use the 'simple' language
+// hint: header("CamelFileName")
+
+        //implement here...
+        ;
+
+// (Bonus) Question(s):
+// - what would you need to change to make this copy into a move?
         from(format("file://%s/test-data/startingPoint/?noop=true", projectBaseLocation))
                 .routeId(name)
                 .choice()
