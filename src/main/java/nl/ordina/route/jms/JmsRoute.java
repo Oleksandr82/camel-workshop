@@ -92,6 +92,9 @@ public class JmsRoute extends RouteBuilder {
                 .to("jms:queue:dump.ivo")
                 .end();
 
+//Hint(s):
+// - "16[0-9]{2}\n"
+
 // Extra:
 // - why would it be better to get the endpoints from a property file?
 //   - Think about testability.
