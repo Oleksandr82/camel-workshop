@@ -36,7 +36,7 @@
             <item name="Exercise 2 - FTP" href="exercise2.html"/>
             <item name="Exercise 3 - JMS" href="exercise3.html"/>
             <item name="Exercise 4 - EIP - Message Translator" href="exercise4.html"/>
-            <!--<item name="Exercise 5" href="exercise5.html"/>-->
+            <item name="Exercise 5 - Bonus" href="exercise5.html"/>
             <!--<item name="Exercise 6" href="exercise6.html"/>-->
         </menu>
 

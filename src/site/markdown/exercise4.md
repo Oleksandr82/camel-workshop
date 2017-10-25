@@ -32,7 +32,7 @@ some of the possible translations we do almost daily.
 
 ## Hint(s)
 
-* 
+* Hint if stuff starts to do strange things sometimes a `mvn clean package` will work wonders or throwing the target/csv,json etc folders away.
 * maven artifact o.a...
 
 ```xml
