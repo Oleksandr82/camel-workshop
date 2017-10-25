@@ -12,6 +12,7 @@ In this exercise we will try to implement the [Message Translator EIP](http://ww
 Translating and transforming messages is one of the things we do a lot as programmers. From Java objects to XML to Json and back are just
 some of the possible translations we do almost daily.
 
+* For this exercise we need the docker environment to be running
 * Check out branch ex4 (`git checkout ex4`)
 * Open class `MessageTranslatorUsingProcessorRoute`
 * Follow the instructions there and make it all work...

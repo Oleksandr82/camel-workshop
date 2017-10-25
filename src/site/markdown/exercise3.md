@@ -4,6 +4,7 @@ JMS has been part of the java standard for years now and is used a lot.
 That is why it is an integral part of Camel just as File and FTP. 
 This exercise will show how easy it is to get messaging working...
 
+* For this exercise we need the docker environment to be running
 * Check out branch ex3 (`git checkout ex3`)
 * Open class `JmsRoute`
 * Follow the instructions there and make it all work...

@@ -77,6 +77,7 @@ public class CopyFilesWithExtension {
 
 Lets imitate this behavior with a Camel route.
 
+* The docker environment is not needed for this exercise
 * Please checkout the exercise 1 branch: `git checkout ex1`
 * Please open class `FileCopyRoute`
 * Follow the instructions in the code
