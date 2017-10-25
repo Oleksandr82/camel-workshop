@@ -71,7 +71,7 @@ https://mvnrepository.com/artifact/org.apache.camel/camel-core
     <dependency>
         <groupId>org.apache.camel</groupId>
         <artifactId>camel-core</artifactId>
-        <version>2.19.3</version>
+        <version>2.20.0</version>
     </dependency>
 
 https://mvnrepository.com/artifact/org.apache.camel/camel-amqp
@@ -79,7 +79,7 @@ https://mvnrepository.com/artifact/org.apache.camel/camel-amqp
     <dependency>
         <groupId>org.apache.camel</groupId>
         <artifactId>camel-amqp</artifactId>
-        <version>2.19.3</version>
+        <version>2.20.0</version>
     </dependency>
     
 ---
