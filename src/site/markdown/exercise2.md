@@ -3,6 +3,8 @@
 This exercise expands on the file routing exercise
 
 * Check out branch ex2 (`git checkout ex2`)
+* make sure you have the docker environment running
+    * `docker-compose up` in a shell in this project directory
 * Open class `FileToFtpRoute`
 * Follow the instructions and make it all work...
 * Open class `FtpToFtpRoute`
