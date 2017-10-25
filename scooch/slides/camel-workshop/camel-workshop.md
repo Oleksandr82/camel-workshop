@@ -114,6 +114,7 @@ Community
 - Camel in Action (2nd Edition)
 
     https://www.manning.com/books/camel-in-action-second-edition
+    (http://ivo2u.nl/5P)
 
 ![camel-in-ation](./pics/camel-in-action-2nd-ed-small.png)
 
@@ -121,5 +122,6 @@ Community
 ## Workshop
 Github repo:  
 **https://github.com/Ordina-JTech/camel-workshop**
+(http://ivo2u.nl/5b)
 
 <img src="./pics/hump-day-funny-camel-yosemite-sam.png" style="width:50%;height:50%;"/>
