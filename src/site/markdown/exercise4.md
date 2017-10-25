@@ -38,6 +38,10 @@ some of the possible translations we do almost daily.
 ```xml
 <dependency>
     <groupId>org.apache.camel</groupId>
+    <artifactId>camel-jsonpath</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.apache.camel</groupId>
     <artifactId>camel-csv</artifactId>
 </dependency>
 <dependency>
