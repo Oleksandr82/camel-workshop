@@ -56,6 +56,7 @@ public class MessageTranslatorUsingProcessorRoute extends RouteBuilder {
 
         from(format("file://%s/test-data/eip/messaging_systems/message_translator/?noop=true", projectBaseLocation))
                 .routeId(name)
+                ;
 
 // complete this route by:
 // - logging the body of the special formatted file
@@ -63,10 +64,5 @@ public class MessageTranslatorUsingProcessorRoute extends RouteBuilder {
 // - logging the transformed message (csv)
 // - routing it to file in target/csv  with the original name with `.csv` added to it
 
-                .log("Found file [$simple{header.CamelFileName}] processing custom format to csv in this route.")
-                .log("Custom formatted file:\n${body}")
-                .process(this.customFormatToCsvProcessor) //used the DI from Spring to reference this bean
-                .log("Csv formatted:\n${body}")
-                .to(format("file://%s/target/csv?fileName=${header.CamelFileName}.csv", projectBaseLocation));
     }
 }

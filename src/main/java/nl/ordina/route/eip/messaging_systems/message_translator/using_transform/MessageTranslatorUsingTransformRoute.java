@@ -27,8 +27,6 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
-import static java.lang.String.format;
-
 /**
  * A.k.a the Adapter pattern.
  *
@@ -69,16 +67,6 @@ public class MessageTranslatorUsingTransformRoute extends RouteBuilder {
 // - log the xml body
 // - routing it to file in target/xml with the original name with `.xml` added to it
 
-        from(format("file://%s/target/json/?noop=true", projectBaseLocation))
-              .routeId(name)
-              .log("Found file [$simple{header.CamelFileName}] processing csv to json in this route.")
-              .bean("jsonPathBean")
-              .log("Input message:\n${body}")
-              .transform(method(Order.class, "fromJson"))
-              .marshal()
-              .jaxb()
-              .log("Xml marshalled:\n${body}")
-              .to(format("file://%s/target/xml?fileName=${header.CamelFileName}.xml", projectBaseLocation));
 
     }
 }

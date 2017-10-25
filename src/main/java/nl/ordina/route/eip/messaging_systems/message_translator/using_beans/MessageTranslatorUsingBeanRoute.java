@@ -22,8 +22,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static java.lang.String.format;
-
 /**
  * A.k.a the Adapter pattern.
  * <p>
@@ -59,16 +57,5 @@ public class MessageTranslatorUsingBeanRoute extends RouteBuilder {
 // - log the json body
 // - routing it to file in target/json with the original name with `.json` added to it
 
-        from(format("file://%s/target/csv/?noop=true", projectBaseLocation))
-                .routeId(name)
-                .log("Found file [$simple{header.CamelFileName}] processing csv to json in this route.")
-                .log("Input message:\n${body}")
-                .unmarshal()
-                .csv()
-                .log("CSV unmarshalled:\n${body}")
-                .bean("csvToJson", "map")
-//                .to("bean:csvToJson?method=map") //also correct
-                .log("Bean mapped to json:\n${body}")
-                .to(format("file://%s/target/json?fileName=${header.CamelFileName}.json", projectBaseLocation));
     }
 }
