@@ -5,7 +5,7 @@
 * docker (native) installed
 * docker-compose installed
 * java 8 installed
-* maven 3+ installed
+* maven 3.5+ installed
 * a sense of adventure :-)
 
 ## Run

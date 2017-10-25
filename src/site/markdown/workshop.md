@@ -19,3 +19,4 @@ Hope you like the experience and love the ease with which you can now integrate 
 
 ## Hump on...
 
+Just start with Exercise 1 (menu)
