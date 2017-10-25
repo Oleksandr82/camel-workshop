@@ -60,12 +60,9 @@ public class ServiceActivatorRoutesWithBeanMethodResolving extends RouteBuilder 
         final String name = this.getClass()
                                 .getSimpleName();
 
-
-
         from(format("file://%s/test-data/eip/messaging_endpoints/service_activator/with_beans/?noop=true",
                     projectBaseLocation))
               .routeId(name + "_0")
-
 // Finish the route by splitting the body of the found files into lines and adding a message to the 'names.<yourname>' topic
               .convertBodyTo(String.class)
               .split(body().tokenize())

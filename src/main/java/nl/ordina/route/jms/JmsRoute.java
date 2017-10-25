@@ -60,8 +60,6 @@ public class JmsRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         final String name = this.getClass().getSimpleName();
-        final String queue = format("jms:queue:%s", name);
-
 
 // Create a route that get all files from the test-data/JmsRoute folder and give it an id corresponding to the name of the class
 // if the file is called "shakespeare.txt" special possessing is needed
@@ -93,6 +91,11 @@ public class JmsRoute extends RouteBuilder {
                 .log("Found file [$simple{header.CamelFileName}] => dump queue")
                 .to("jms:queue:dump.ivo")
                 .end();
+
+// Extra:
+// - why would it be better to get the endpoints from a property file?
+//   - Think about testability.
+//   - central place of endpoint registration.
 
     }
 }
