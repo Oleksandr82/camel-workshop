@@ -22,8 +22,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static java.lang.String.format;
-
 /**
  * JMS ActiveMQ demo.
  * <p>
@@ -68,29 +66,8 @@ public class JmsRoute extends RouteBuilder {
 // if xml files you can put them on the `xml.<yourname>` queue
 // if other files you can put them on the 'dump.<yourname>' queue
 
+        //implement route here
 
-        from(format("file://%s/test-data/JmsRoute/?noop=true", this.projectBaseLocation))
-                .routeId(name)
-                .log("Found file [$simple{header.CamelFileName}]")
-                .choice()
-                .when(header("CamelFileName").isEqualTo("shakespeare.txt"))
-                .log("Found file [$simple{header.CamelFileName}] => Special processing")
-                .split(body().regexTokenize("16[0-9]{2}\n"))
-                .process(exchange -> {
-                    final String[] lines = exchange.getIn().getBody(String.class).trim().split("\n");
-                    if (lines.length > 0) {
-                        log.info(lines[0]);
-                    }
-                })
-                .to("jms:queue:shakespeare.ivo2")
-                .endChoice()
-                .when(header("CamelFileName").endsWith(".xml"))
-                .log("Found file [$simple{header.CamelFileName}] => xml queue")
-                .to("jms:queue:xml.ivo")
-                .otherwise()
-                .log("Found file [$simple{header.CamelFileName}] => dump queue")
-                .to("jms:queue:dump.ivo")
-                .end();
 
 //Hint(s):
 // - "16[0-9]{2}\n"
