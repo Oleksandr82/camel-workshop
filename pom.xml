@@ -59,7 +59,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <github.global.server>github</github.global.server>
         <java.version>1.8</java.version>
-        <camel.version>2.18.3</camel.version>
+        <camel.version>2.20.0</camel.version>
     </properties>
 
     <scm>
