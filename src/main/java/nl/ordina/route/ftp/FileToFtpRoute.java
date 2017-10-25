@@ -23,8 +23,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static java.lang.String.format;
-
 /**
  * This exercise lets you get acquainted with ftp routing.
  *
@@ -50,10 +48,6 @@ public class FileToFtpRoute extends RouteBuilder {
         // log what you are doing
         // make sure you get the ftp information from the application.yml file of its profile equivalent
 
-        from(format("file://%s/target/txt/", projectBaseLocation))
-                .routeId(name)
-                .log("Found file [$simple{header.CamelFileName}]")
-                .to("ftp://{{ftp.host}}:{{ftp.port}}?username={{ftp.user.name}}&password={{ftp.user.password}}&passiveMode={{ftp.passiveMode}}");
 
     }
 }

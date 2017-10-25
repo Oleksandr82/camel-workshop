@@ -37,10 +37,6 @@ public class FtpToFtpRoute extends RouteBuilder {
 // make sure to log all you do
 // the move should leave a copy in a backup folder on the `user` account
 
-        from("ftp://{{ftp.user.name}}:{{ftp.user.password}}@{{ftp.host}}:{{ftp.port}}?move=.camel&passiveMode={{ftp.passiveMode}}")
-                .routeId(name)
-                .log("Found file [$simple{header.CamelFileName}] and cp-ing it to the ftp user: admin")
-                .to("ftp://{{ftp.admin.name}}:{{ftp.admin.password}}@{{ftp.host}}:{{ftp.port}}?passiveMode={{ftp.passiveMode}}");
 
     }
 }
