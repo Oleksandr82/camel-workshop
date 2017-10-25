@@ -14,7 +14,7 @@ This exercise will show how easy it is to get messaging working...
 
 ## Bonus Question(s):
 
-* Can you read the split up books from the Queue and write them back to file with the target/books/<title>.txt as the filename?
+* Can you read the split up books from the Queue and write them back to file with the `target/books/<title>.txt` as the filename?
 
 ## Hint(s)
 
