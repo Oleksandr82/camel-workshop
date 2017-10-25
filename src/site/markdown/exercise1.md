@@ -88,8 +88,36 @@ Lets imitate this behavior with a Camel route.
 * can you move with backup on original location?
 
 
+## Extra information
+
+In order to get the camel routes to work the following was added to the pom.xml
+
+```xml
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-parent</artifactId>
+            <version>${camel.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+```
+
+and
+
+```xml
+<dependency>
+    <groupId>org.apache.camel</groupId>
+    <artifactId>camel-spring-boot-starter</artifactId>
+</dependency>
+```
+
 ## Hint(s)
 
 * Choose
 * Simple Expression Language
 * File Component 
+
