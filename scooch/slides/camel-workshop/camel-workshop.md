@@ -124,4 +124,14 @@ Github repo:
 **https://github.com/Ordina-JTech/camel-workshop**
 (http://ivo2u.nl/5b)
 
+Read the instructions and follow these up to "Workshop"
+
 <img src="./pics/hump-day-funny-camel-yosemite-sam.png" style="width:50%;height:50%;"/>
+
+---
+## Workshop
+- The first exercise
+  - Checkout branch "ex1"
+  - We will build a simple route to transfer a file with Apache Camel
+  
+**https://github.com/Ordina-JTech/camel-workshop**
