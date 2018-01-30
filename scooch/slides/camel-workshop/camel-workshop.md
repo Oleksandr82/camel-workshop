@@ -4,13 +4,13 @@
 <center>![jtech](./pics/jtech-logo.png)</center>
 ---
 ## Agenda
-- Introductie
-- Wat gaan we vandaag doen?
-- Enterprise Integration Patterns (EIP)
-- Apache Camel
-- Workshop
+- Introduction
+- What are we going to do today?
+  - Enterprise Integration Patterns (EIP)
+  - Apache Camel Basics
+  - Workshop
 ---
-## Introductie
+## Introduction
 **Ivo Woltring**  
 
 Software Architect and CodeSmith @ Ordina
@@ -19,14 +19,14 @@ Software Architect and CodeSmith @ Ordina
 
 **Edwin Derks**  
 
-Software and Solutions Architect @ Ordina
+Solutions Architect @ Ordina
 
 ![edwin](./pics/edwinderks-bio.png)
 
 ---
-## Wat gaan we vandaag doen?
-- Theorie
-- Hands-on bouwen van Camel integratie module
+## What are we going to do today?
+- Theory
+- Hands-on building your own Camel integration module
 
 ![checklist](./pics/checklist.png)
 ---
@@ -37,33 +37,33 @@ Software and Solutions Architect @ Ordina
 
 ---
 ## Enterprise Integration Patterns (EIP)
-- Wat zijn dit en doen ze?
+- What are they and what do they do?
 
 ![eips](./pics/eips.png)
 ---
 ## Apache Camel
-- Geschiedenis
-- Wat is het en wat doet het?
+- History
+- How does it work?
 - Community
-- Literatuur
+- Literature
 
 ![camel-logo](./pics/apache-camel-logo.png)
 ---
-## Apache Camel Geschiedenis
+## Apache Camel History
 
 ![camel-logo](./pics/apache-camel-logo.png)
 ---
 ## Apache Camel
-- Software integratie framework
-- Talloze componenten
-- Geprogrammeerd in Java!
-- Verschillende DSL's, waaronder XML en Java
-- Beschikbaar als Maven artifacts
-- Standalone of integreren met Spring
+- Software integration framework
+- Huge number of integration components
+- Made in Java, runs on the JVM
+- Various DSL's, e.g. XML and Java
+- Available as Maven artifacts
+- Run standalone or integrate with Spring
 
 ![camel-logo](./pics/apache-camel-logo.png)
 ---
-## Apache Camel Componenten
+## Apache Camel Components
 ![maven-logo](./pics/maven-logo-black-on-white.png)
 
 https://mvnrepository.com/artifact/org.apache.camel/camel-core
@@ -71,7 +71,7 @@ https://mvnrepository.com/artifact/org.apache.camel/camel-core
     <dependency>
         <groupId>org.apache.camel</groupId>
         <artifactId>camel-core</artifactId>
-        <version>2.20.0</version>
+        <version>2.20.1</version>
     </dependency>
 
 https://mvnrepository.com/artifact/org.apache.camel/camel-amqp
@@ -79,7 +79,7 @@ https://mvnrepository.com/artifact/org.apache.camel/camel-amqp
     <dependency>
         <groupId>org.apache.camel</groupId>
         <artifactId>camel-amqp</artifactId>
-        <version>2.20.0</version>
+        <version>2.20.1</version>
     </dependency>
     
 ---
@@ -91,10 +91,10 @@ https://mvnrepository.com/artifact/org.apache.camel/camel-amqp
 
 ![camel-xml-dsl](./pics/camel-xml-dsl.png)
 ---
-## Apache Camel: De basis
-- Camel componenten
-- Definieer routes
-- Data wordt verscheept door route, verpakt in een Exchange
+## Apache Camel: The Basics
+- Camel components
+- Define routes
+- Data is being shipped via a route, packed as an Exchange
 
 ![camel-exchange-structure](./pics/camel-exchange-structure.png)
 ---
@@ -103,14 +103,14 @@ Community
 
     http://camel.apache.org/
 
-- Onbekend maar niet onbemind
-- Onzichtbaar
+- Unknown, but with a solid fan base
+- Only integration, no GUI
 - Cloud
 
 ![camel-box](./pics/camel-box-small.png)
 
 ---
-## Apache Camel Literatuur
+## Apache Camel Literature
 - Camel in Action (2nd Edition)
 
     https://www.manning.com/books/camel-in-action-second-edition
@@ -124,4 +124,14 @@ Github repo:
 **https://github.com/Ordina-JTech/camel-workshop**
 (http://ivo2u.nl/5b)
 
+Read the instructions and follow these up to "Workshop"
+
 <img src="./pics/hump-day-funny-camel-yosemite-sam.png" style="width:50%;height:50%;"/>
+
+---
+## Workshop
+- The first exercise
+  - Checkout branch "ex1"
+  - We will build a simple route to transfer a file with Apache Camel
+  
+**https://github.com/Ordina-JTech/camel-workshop**
